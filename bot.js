@@ -127,6 +127,8 @@ function searchBeer(message) {
 
             console.log("Body: " + body);
 
+            console.log("GitHub working!");
+
             // Data reception is done, do whatever with it!
             var parsed = JSON.parse(body);
 
