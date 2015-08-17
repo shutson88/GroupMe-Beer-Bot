@@ -138,6 +138,7 @@ function searchBeer(message) {
                 return;
             }
 
+            var suggestions = "";
             for(var i = 0; i < parsed.data.length; i++){
                 var beer = new Beer();
                 beer.name = parsed.data[i].name;
@@ -145,8 +146,17 @@ function searchBeer(message) {
                 beer.img = parsed.data[i].labels.medium;
                 beer.abv = parsed.data[i].abv;
 
+                if(i < parsed.data.length-1){
+                  suggestions += parsed.data[i].name+", ";
+                }
+                else{
+                  suggestions += "or " + parsed.data[i].name;
+                }
+
                 beers.push(beer);
             }
+
+            var feedback = "The beer \'"+message+"\' was not found. Perhaps you meant to type "+suggestions;
             //matchBeer(message, beers);
 
         });
