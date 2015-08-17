@@ -142,9 +142,6 @@ function searchBeer(message) {
             for(var i = 0; i < parsed.data.length; i++){
                 var beer = new Beer();
                 beer.name = parsed.data[i].name;
-                beer.description = parsed.data[i].description;
-                beer.img = parsed.data[i].labels.medium;
-                beer.abv = parsed.data[i].abv;
 
                 if(i < parsed.data.length-1){
                   suggestions += parsed.data[i].name+", ";
