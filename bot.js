@@ -157,6 +157,7 @@ function searchBeer(message) {
             }
 
             var feedback = "The beer \'"+message+"\' was not found. Perhaps you meant to type "+suggestions;
+            postMessage(feedback);
             //matchBeer(message, beers);
 
         });
