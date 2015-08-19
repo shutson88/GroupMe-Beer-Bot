@@ -104,7 +104,9 @@ function getBeer(message) {
         var beer = new Beer();
         beer.name = parsed.data[i].name;
         beer.description = parsed.data[i].description;
-        beer.img = parsed.data[i].labels.medium;
+        if(parsed.data[i].labels != null){
+          beer.img = parsed.data[i].labels.medium;
+        }
         beer.abv = parsed.data[i].abv;
 
         beers.push(beer);
