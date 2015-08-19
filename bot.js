@@ -33,7 +33,7 @@ function respond() {
   }
 }
 
-function postMessage(message) {
+function postMessage(message, imageURL) {
   var botResponse, options, body, botReq;
 
   botResponse = message;
@@ -50,7 +50,7 @@ function postMessage(message) {
     "attachments": [
       {
       "type": "image",
-      "url": "http://nerdist.com/wp-content/uploads/2015/06/Dwayne-Johnson.jpg"
+      "url": imageURL
       }
     ]
   };
@@ -160,7 +160,7 @@ function searchBeer(message) {
             }
 
             var feedback = "The beer \'"+message+"\' was not found. Perhaps you meant to type "+suggestions;
-            postMessage(feedback);
+            postMessage(feedback, "");
             //matchBeer(message, beers);
 
         });
@@ -180,7 +180,7 @@ function matchBeer(message, beers){
         console.log("Abv: " + beer.abv);
 
         if(message.toUpperCase() === beer.name.toUpperCase()){
-            postMessage(beer.description);
+            postMessage(beer.description, beer.img);
         }
     }
 }
