@@ -219,7 +219,7 @@ function matchBeer(message, beers){
           for(var i = 0; i < paragraphs.length; i++){
             if(i == 0){
               postImage(beer.img);
-              postMessage(paragraphs[i]), 50000;
+              postMessage(paragraphs[i]);
             }
             else{
               //postMessage(paragraphs[i], "");
