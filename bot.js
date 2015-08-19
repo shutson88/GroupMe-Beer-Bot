@@ -60,23 +60,18 @@ function postMessage(message, imageURL) {
   botReq = HTTPS.request(options, function(res) {
       if(res.statusCode == 202) {
         //neat
-        return true;
       } else {
         console.log('rejecting bad status code ' + res.statusCode);
-        return true;
       }
   });
 
   botReq.on('error', function(err) {
     console.log('error posting message '  + JSON.stringify(err));
-    return true;
   });
   botReq.on('timeout', function(err) {
     console.log('timeout posting message '  + JSON.stringify(err));
-    return true;
   });
   botReq.end(JSON.stringify(body));
-  return true;
 }
 
 function getBeer(message) {
@@ -189,11 +184,12 @@ function matchBeer(message, beers){
         var paragraphs = beer.description.split("\n");
         if(message.toUpperCase() === beer.name.toUpperCase()){
           for(var i = 0; i < paragraphs.length; i++){
-            if(i === 0){
-              var returned = postMessage(paragraphs[i], beer.img);
+            if(i == 0){
+              postMessage(paragraphs[i], beer.img);
             }
             else{
-              var returned = postMessage(paragraphs[i], "");
+              //postMessage(paragraphs[i], "");
+              setTimeout(postMessage(paragraphs[i], ""), 1250);
             }
           }
         
