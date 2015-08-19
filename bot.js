@@ -120,7 +120,6 @@ function getBeer(message) {
 }
 
 function searchBeer(message) {
-    //https://api.brewerydb.com/v2/beers/?key=bc25b64bb0d92491fdc8be4ac52e9a89&name=dos equis special
     var beers = [];
     HTTPS.get("https://api.brewerydb.com/v2/search/?key="+key+"&q="+message, function(res) {
         console.log("Got response: " + res.statusCode);
@@ -182,8 +181,18 @@ function matchBeer(message, beers){
         console.log("Abv: " + beer.abv);
         console.log("Desc: " + beer.description);
 
+        var paragraphs = beer.description.split("\n");
         if(message.toUpperCase() === beer.name.toUpperCase()){
-            postMessage(beer.description, beer.img);
+          for(int i = 0; i < paragraphs.length; i++){
+            if(i == 0){
+              postMessage(paragraphs[i], beer.img);
+            }
+            else{
+              postMessage(paragraphs[i], "");
+            }
+          }
+        
+            
         }
     }
 }
