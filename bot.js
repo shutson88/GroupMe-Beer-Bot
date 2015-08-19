@@ -50,7 +50,7 @@ function postMessage(message) {
     "attachments": [
       {
       "type": "image",
-      "url": "http://i.groupme.com/123456789"
+      "url": "http://nerdist.com/wp-content/uploads/2015/06/Dwayne-Johnson.jpg"
       }
     ]
   };
