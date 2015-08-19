@@ -182,7 +182,7 @@ function matchBeer(message, beers){
         console.log("Abv: " + beer.abv);
 
         if(message.toUpperCase() === beer.name.toUpperCase()){
-            postMessage(beer.description, beer.img);
+            postMessage(beer.description, "");
         }
     }
 }
