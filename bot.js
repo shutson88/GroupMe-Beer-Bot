@@ -211,6 +211,10 @@ function matchBeer(message, beers){
         console.log("Abv: " + beer.abv);
         console.log("Desc: " + beer.description);
 
+        if(beer.description == null){
+          beer.description = "";
+        }
+
         var paragraphs = beer.description.split("\n");
         if(message.toUpperCase() === beer.name.toUpperCase()){
           for(var i = 0; i < paragraphs.length; i++){
