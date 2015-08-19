@@ -223,7 +223,7 @@ function matchBeer(message, beers){
             }
             else{
               //postMessage(paragraphs[i], "");
-              setTimeout(postMessage(paragraphs[i]), 75000);
+              setTimeout(postMessage(paragraphs[i]), 10000);
             }
           }
         
