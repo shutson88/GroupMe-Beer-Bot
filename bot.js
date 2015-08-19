@@ -189,7 +189,7 @@ function matchBeer(message, beers){
             }
             else{
               //postMessage(paragraphs[i], "");
-              setTimeout(postMessage(paragraphs[i], ""), 1250);
+              setTimeout(postMessage(paragraphs[i], ""), 50000);
             }
           }
         
