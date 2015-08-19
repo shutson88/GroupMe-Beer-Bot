@@ -180,9 +180,10 @@ function matchBeer(message, beers){
         console.log("Name: " + beer.name);
         console.log("img: " + beer.img);
         console.log("Abv: " + beer.abv);
+        console.log("Desc: " + beer.description);
 
         if(message.toUpperCase() === beer.name.toUpperCase()){
-            postMessage(beer.description, "");
+            postMessage(beer.description, beer.img);
         }
     }
 }
