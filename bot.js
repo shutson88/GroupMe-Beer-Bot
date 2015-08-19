@@ -231,7 +231,7 @@ function matchBeer(message, beers){
         }
         */
         postImage(beer.img);
-        postImage(beer.description);
+        postMessage(beer.description);
     }
 }
 
