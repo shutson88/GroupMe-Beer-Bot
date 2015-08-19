@@ -184,7 +184,7 @@ function matchBeer(message, beers){
         var paragraphs = beer.description.split("\n");
         if(message.toUpperCase() === beer.name.toUpperCase()){
           for(var i = 0; i < paragraphs.length; i++){
-            if(i == 0){
+            if(i === 0){
               postMessage(paragraphs[i], beer.img);
             }
             else{
