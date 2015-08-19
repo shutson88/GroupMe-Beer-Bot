@@ -213,7 +213,7 @@ function matchBeer(message, beers){
         if(beer.description == null){
           beer.description = "";
         }
-
+        /*
         var paragraphs = beer.description.split("\n");
         if(message.toUpperCase() === beer.name.toUpperCase()){
           for(var i = 0; i < paragraphs.length; i++){
@@ -229,6 +229,9 @@ function matchBeer(message, beers){
         
             
         }
+        */
+        postImage(beer.img);
+        postImage(beer.description);
     }
 }
 
