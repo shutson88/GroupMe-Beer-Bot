@@ -164,9 +164,6 @@ function searchBeer(message) {
 
             console.log("Body: " + body);
 
-            console.log("GitHub working!");
-
-            // Data reception is done, do whatever with it!
             var parsed = JSON.parse(body);
 
             //Return if data is not found
@@ -176,15 +173,17 @@ function searchBeer(message) {
             }
 
             var suggestions = "";
+            //Max of 5 suggestions
             for(var i = 0; i < parsed.data.length; i++){
                 var beer = new Beer();
                 beer.name = parsed.data[i].name;
 
-                if(i < parsed.data.length-1){
+                if(i < parsed.data.length-1 && i < 5){
                   suggestions += parsed.data[i].name+", ";
                 }
                 else{
                   suggestions += "or " + parsed.data[i].name;
+                  i = parsed.data.length;
                 }
 
                 beers.push(beer);
